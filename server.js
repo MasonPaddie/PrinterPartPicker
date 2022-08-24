@@ -1,7 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose');
 const app = express()
-const port = 3000
+const PORT = process.env.PORT||4000
 var printers = require('./models/printers.js')
 const Printers = require('./models/printers.js');
 var parts = require('./models/parts.js')
@@ -141,8 +141,8 @@ app.post('/parts/', (req, res)=>{
     });
 });
   
-app.listen(port,() => {
-    console.log('listening on port' , port)
+app.listen(PORT,() => {
+    console.log('listening on PORT' , PORT)
 })
 
 
