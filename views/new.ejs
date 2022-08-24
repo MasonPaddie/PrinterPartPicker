@@ -1,0 +1,10 @@
+<%- include('./partials/header.ejs') %>
+<div class="container">
+    <form action="/printers" method="POST">
+        <h1>New Printer Entry</h1>
+        <input type="text" name="name" placeholder="Name"/><br><br>
+        <input type="text" name="img" placeholder="image url"/><br><br>
+        <input type="submit" value="Add Printer">
+    </form>
+</div>
+<%- include('./partials/footer.ejs') %>
