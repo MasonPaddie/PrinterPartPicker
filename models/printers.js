@@ -15,6 +15,7 @@ const printersSchema = mongoose.Schema({
     nozzle: {type: String, required: true},
     lcd: {type: String},
     filaRunout: {type: Boolean, required: true},
+    blSensor: {type: Boolean, required: true},
     img: {type: String, unique: true},
     price: {type: Number, min: 0},
 }, { timestamps: true })

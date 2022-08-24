@@ -1,0 +1,11 @@
+<%- include('./partials/header.ejs') %>
+<div class="container">
+    <form action="/parts" method="POST">
+        <h1>New Part Entry</h1>
+        <input type="text" name="name" placeholder="Name"/><br><br>
+        <input type="text" name="img" placeholder="image url"/><br><br>
+        <input type="text" name="price" placeholder="Price"/><br><br>
+        <input type="submit" value="Add Part">
+    </form>
+</div>
+<%- include('./partials/footer.ejs') %>

@@ -24,20 +24,33 @@ app.get(`/parts`, ( req, res )=>{
     {parts: parts});
 });
 
-//New
+//New Printers
 app.get(`/printers/new`, ( req, res )=>{
     res.render('new.ejs', 
     {});
 });
 
-//Create
+//New Parts
+app.get(`/parts/new`, ( req, res )=>{
+    res.render('newPart.ejs', 
+    {});
+});
+
+//Create Printers
 app.post('/printers', ( req, res )=>{
     console.log(req.body)
     printers.push(req.body)
     res.redirect('/printers')
 });
 
-//Show
+//Create Parts
+app.post('/parts', ( req, res )=>{
+    console.log(req.body)
+    parts.push(req.body)
+    res.redirect('/parts')
+});
+
+//Show Printers
 app.get(`/printers/:index`, ( req, res )=>{
     const index = req.params.index
     res.render('showPrinters.ejs',
@@ -46,26 +59,54 @@ app.get(`/printers/:index`, ( req, res )=>{
     });
 });
 
-//Edit
+//Show Parts
+app.get(`/parts/:index`, ( req, res )=>{
+    const index = req.params.index
+    res.render('showParts.ejs',
+    {parts: parts,
+        index: index
+    });
+});
+
+//Edit Printers
 app.get(`/printers/:index/edit`, ( req, res )=>{
     res.render('edit.ejs',
     {printers: printers[req.params.index],
     index: req.params.index});
 });
 
-//Update
+//Edit Parts
+app.get(`/parts/:index/edit`, ( req, res )=>{
+    res.render('edit.ejs',
+    {parts: parts[req.params.index],
+    index: req.params.index});
+});
+
+//Update Printers
 app.put('/printers/:index', (req, res) => { 
     printers[req.params.index] = req.body 
       res.redirect('/printers')
 })
+
+//Update Parts
+app.put('/parts/:index', (req, res) => { 
+    parts[req.params.index] = req.body 
+      res.redirect('/parts')
+})
   
-//Destroy
+//Destroy Printers
 app.delete(`/printers/:index`, ( req, res )=>{
     printers.splice(req.params.index,1)
     res.redirect('/printers')
 });
 
-//Mongo Route
+//Destroy Parts
+app.delete(`/parts/:index`, ( req, res )=>{
+    parts.splice(req.params.index,1)
+    res.redirect('/parts')
+});
+
+//Mongo Route Printers
 app.post('/printers/', (req, res)=>{
     Printers.create(req.body, (error, createdPrinters)=>{
         if (error){
@@ -74,6 +115,19 @@ app.post('/printers/', (req, res)=>{
         }
         else{
 	        res.send(createdPrinters);
+        }
+    });
+});
+
+//Mongo Route Parts
+app.post('/parts/', (req, res)=>{
+    Parts.create(req.body, (error, createdParts)=>{
+        if (error){
+        	console.log(error);
+        	res.send(error);
+        }
+        else{
+	        res.send(createdParts);
         }
     });
 });

@@ -1,0 +1,14 @@
+<%- include('./partials/header.ejs') %>
+    <h1><%=parts[index].name%> Page</h1>
+    <!-- <img src=<%=(parts[index].img) %> > <br> -->
+    <a id="editButton" href="/parts/<%= index %>/edit">Edit part</a>
+
+    <br/>
+    <br/>
+
+    <!-- delete route -->
+    <form action="/parts/<%= index %>?_method=DELETE" method="POST">
+        <input type="submit" value="DELETE"/>
+    </form>
+
+<%- include('./partials/footer.ejs') %>

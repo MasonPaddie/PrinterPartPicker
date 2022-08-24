@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 parts = [
 ];
 
-module.exports = parts;
+
 
 const partsSchema = mongoose.Schema({
     name: {type: String, required: true, unique: true},
@@ -16,6 +16,7 @@ const partsSchema = mongoose.Schema({
 const Parts = mongoose.model('Parts',partsSchema)
 
 module.exports = Parts  
+module.exports = parts;
 
 // const partsMotionSystemSchema = mongoose.Schema({
 //     name: {type: String, required: true, unique: true},
