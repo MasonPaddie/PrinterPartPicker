@@ -1,0 +1,27 @@
+<%- include('./partials/header.ejs') %>
+<div class="container">
+    <form action="/parts/<%= type %>" method="POST">
+        <h1>New PSU Entry</h1>
+
+        <label for="type">Type</label>
+        <input type="text" name="type" value="<%= type %>" readonly><br/>
+
+        <label for="name">Name</label>
+        <input type="text" name="name" required><br/>
+
+        <label for="watts">Watts</label>
+        <input type="text" name="watts"><br/>
+
+        <label for="volts">Volts</label>
+        <input type="text" name="volts"><br/>
+
+        <label for="img">Image</label>
+        <input type="text" name="img"> <br/>
+
+        <label for="price">Price</label>
+        <input type="number" name="price" required> <br/>
+
+        <input type="submit" value="Make PSU">
+    </form>
+</div>
+<%- include('./partials/footer.ejs') %>
