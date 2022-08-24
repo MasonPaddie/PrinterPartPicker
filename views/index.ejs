@@ -1,0 +1,19 @@
+<%- include('./partials/header.ejs') %>
+
+<h1>Printers/h1>
+<table class="printers" >
+    <tr>
+    <% for (let i = 0; i < printers.length; i++) { %>
+            <td><a href='<%= `/printers/${i}` %>'> <%= printers[i].name%></a></td>
+    <% } %>
+    </tr>  
+    
+    <!-- <tr>
+    <% for (let i = 0; i < printers.length; i++) { %>
+        <td><img src="<%= printers[i].img%>"></img></td>
+    <% } %>  
+    </tr> -->
+
+</table>
+
+<%- include('./partials/footer.ejs') %>
