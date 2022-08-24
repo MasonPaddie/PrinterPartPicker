@@ -27,7 +27,7 @@ app.get(`/parts`, ( req, res )=>{
 //New Printers
 app.get(`/printers/new`, ( req, res )=>{
     res.render('new.ejs', 
-    {});
+    {parts: parts});
 });
 
 //New Parts

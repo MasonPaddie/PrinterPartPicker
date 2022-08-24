@@ -1,58 +1,97 @@
 <%- include('./partials/header.ejs') %>
 <form action="/printers/<%=index%>?_method=PUT" method="POST">
     
-    <label for="name">Name</label>
-    <input type="text" name="name" id="name"  value = "<%=printers.name%>">
-    <br/>
+  <input type="text" name="name" value="<%=printers.name%>"/><br><br>
+  <input type="text" name="img" placeholder="<%=printers.img%>" ><br><br>
 
-    <label for="motionSystem">Motion System</label>
-    <input type="text" name="motionSystem" id="motionSystem" value= "<%=printers.motionSystem%>">
-    <br/>
+  <!-- dropdown for motionSystem -->
+  <label for="motionSystem">Motion System</label>
+  <select name = "motionSystem" >
+    <option value="<%= printers.motionSystem %>"><%= printers.motionSystem %></option>
+      <% for (let i = 0; i < parts.length; i++) { %>
+          <% if (parts[i].type === "motionSystem" && parts[i] != printers.motionSystem) { %>
+          <option><%= parts[i].name %></option>
+          <%}%>
+      <%}%> 
+  </select> <br/>
 
-    <label for="bed">Bed</label>
-    <input type="text" name="bed" id="bed" value= "<%=printers.bed%>">
-    <br/>
+  <!-- dropdown for bed -->
+  <label for="bed">Bed</label>
+  <select name = "bed" >
+    <option value="<%= printers.bed %>"><%= printers.bed %></option>
+      <% for (let i = 0; i < parts.length; i++) { %>
+          <% if (parts[i].type === "bed" && parts[i] != printers.bed) { %>
+          <option><%= parts[i].name %></option>
+          <%}%>
+      <%}%> 
+  </select> <br/>
 
-    <label for="psu">PSU</label>
-    <input type="text" name="psu" id="psu" value= "<%=printers.psu%>">
-    <br/>
+<!-- dropdown for psu -->
+<label for="psu">PSU</label>
+<select name = "psu" >
+  <option value="<%= printers.psu %>"><%= printers.psu %></option>
+   <% for (let i = 0; i < parts.length; i++) { %>
+       <% if (parts[i].type === "psu" && parts[i] != printers.psu) { %>
+       <option><%= parts[i].name %></option>
+       <%}%>
+   <%}%> 
+</select> <br/>
 
-    <label for="motherboard">Motherboard</label>
-    <input type="text" name="motherboard" id="motherboard" value= "<%=printers.motherboard%>">
-    <br/>
-    
-    <label for="extruder">Extruder</label>
-    <input type="text" name="extruder" id="extruder" value= "<%=printers.extruder%>">
-    <br/>
+<!-- dropdown for motherboard -->
+<label for="motherboard">Motherboard</label>
+<select name = "motherboard" >
+  <option value="<%= printers.motherboard %>"><%= printers.motherboard %></option>
+   <% for (let i = 0; i < parts.length; i++) { %>
+       <% if (parts[i].type === "motherboard" && parts[i] != printers.motherboard) { %>
+       <option><%= parts[i].name %></option>
+       <%}%>
+   <%}%> 
+</select> <br/>
 
-    <label for="hotEnd">Hot End</label>
-    <input type="text" name="hotEnd" id="hotEnd" value= "<%=printers.hotEnd%>">
-    <br/>
+<!-- dropdown for extruder -->
+<label for="extruder">Extruder</label>
+<select name = "extruder" >
+  <option value="<%= printers.extruder %>"><%= printers.extruder %></option>
+   <% for (let i = 0; i < parts.length; i++) { %>
+       <% if (parts[i].type === "extruder" && parts[i] != printers.extruder) { %>
+       <option><%= parts[i].name %></option>
+       <%}%>
+   <%}%> 
+</select> <br/>
 
-    <label for="nozzle">Nozzle</label>
-    <input type="text" name="nozzle" id="nozzle" value= "<%=printers.nozzle%>">
-    <br/>
+<!-- dropdown for hotEnd -->
+<label for="hotEnd">Hot End</label>
+<select name = "hotEnd" >
+  <option value="<%= printers.hotEnd %>"><%= printers.hotEnd %></option>
+   <% for (let i = 0; i < parts.length; i++) { %>
+       <% if (parts[i].type === "hotEnd" && parts[i] != printers.hotEnd) { %>
+       <option><%= parts[i].name %></option>
+       <%}%>
+   <%}%> 
+</select> <br/>
 
-    <label for="lcd">LCD</label>
-    <input type="text" name="lcd" id="lcd" value= "<%=printers.lcd%>">
-    <br/>
+<!-- dropdown for nozzle -->
+<label for="nozzle">Nozzle</label>
+<select name = "nozzle" >
+  <option value="<%= printers.nozzle %>"><%= printers.nozzle %></option>
+   <% for (let i = 0; i < parts.length; i++) { %>
+       <% if (parts[i].type === "nozzle" && parts[i] != printers.nozzle) { %>
+       <option><%= parts[i].name %></option>
+       <%}%>
+   <%}%> 
+</select> <br/>
 
-    <label for="filaRunout">Filament Runout Sensor</label>
-    <input type="checkbox" name="filaRunout" id="filaRunout" value= "<%=printers.filaRunout%>">
-    <br/>
+<!-- dropdown for lcd -->
+<label for="lcd">LCD</label>
+<select name = "lcd">
+  <option value="<%= printers.lcd %>"><%= printers.lcd %></option>
+   <% for (let i = 0; i < parts.length; i++) { %>
+       <% if (parts[i].type === "lcd" && parts[i] != printers.lcd) { %>
+       <option><%= parts[i].name %></option>
+       <%}%>
+   <%}%> 
+</select> <br/>
 
-    <label for="blSensor">Bed Leveling Sensor</label>
-    <input type="checkbox" name="blSensor" id="blSensor" value= "<%=printers.blSensor%>">
-    <br/>
-    
-    <label for="img">Image</label>
-    <input type="text" name ="img" id="img" value="<%=printers.img%>" alt = "img">
-    <br/>
-
-    <label for="price">Price (Based on sum of part price)</label>
-    <input type="text" name="price" id="price" value= "<%=printers.price%>" readonly>
-    <br/>
-
-    <input type="submit" value="Submit Edit">
+<input type="submit" value="Submit Edit">
   </form>
 <%- include('./partials/footer.ejs') %>
