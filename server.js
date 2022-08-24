@@ -4,18 +4,26 @@ const app = express()
 const port = 3000
 var printers = require('./models/printers.js')
 const Printers = require('./models/printers.js');
+var parts = require('./models/parts.js')
+const Parts = require('./models/parts.js');
 const methodOverride = require('method-override')
 app.use(express.static('public'));
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use(methodOverride('_method'))
 
-//Index
+//Index Printers
 app.get(`/printers`, ( req, res )=>{
     res.render('index.ejs', 
     {printers: printers});
 });
   
+//Index Parts
+app.get(`/parts`, ( req, res )=>{
+    res.render('indexParts.ejs', 
+    {parts: parts});
+});
+
 //New
 app.get(`/printers/new`, ( req, res )=>{
     res.render('new.ejs', 

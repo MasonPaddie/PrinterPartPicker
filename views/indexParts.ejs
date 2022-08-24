@@ -1,0 +1,30 @@
+<%- include('./partials/header.ejs') %>
+
+<h1>Parts </h1>
+
+<!-- if there are parts to display -->
+<% if (parts.length > 3) { %>
+
+<table class="parts">
+    <tr>
+    <% for (let i = 0; i < parts.length; i++) { %>
+    <td><a href='<%= `/parts/${i}` %>'> <%= parts[i].name%></a></td>
+    <%}%>
+    </tr>  
+    
+    <tr>
+    <% for (let i = 0; i < parts.length; i++) { %>
+    <td><img src="<%= parts[i].img%>"></img></td>
+    <%}%>  
+    </tr>
+
+</table> 
+
+<%}%> 
+<% if (parts.length < 4)  { %>
+ 
+<h2>There are no parts to display</h2>
+
+<%}%>
+
+<%- include('./partials/footer.ejs') %>
