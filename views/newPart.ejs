@@ -2,10 +2,21 @@
 <div class="container">
     <form action="/parts" method="POST">
         <h1>New Part Entry</h1>
-        <input type="text" name="name" placeholder="Name"/><br><br>
-        <input type="text" name="img" placeholder="image url"/><br><br>
-        <input type="text" name="price" placeholder="Price"/><br><br>
-        <input type="submit" value="Add Part">
+
+        <!-- dropdown for type -->
+        <label id="typeDropdown" for="type">Type:</label>
+        <select name="type" >
+            <option value="motionSystem">Motion System</option>
+            <option value="bed">Bed</option>
+            <option value="psu">PSU</option>
+            <option value="motherboard">Motherboard</option>
+            <option value="extruder">Extruder</option>
+            <option value="hotEnd">Hot End</option>
+            <option value="nozzle">Nozzle</option>
+            <option value="lcd">LCD</option>
+        </select> <br><br>
+
+        <input type="submit" value="Make Part of Selected Type">
     </form>
 </div>
 <%- include('./partials/footer.ejs') %>
