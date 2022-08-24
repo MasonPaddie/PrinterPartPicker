@@ -51,6 +51,12 @@ app.put('/printers/:index', (req, res) => {
       res.redirect('/printers')
 })
   
+//Destroy
+app.delete(`/printers/:index`, ( req, res )=>{
+    printers.splice(req.params.index,1)
+    res.redirect('/printers')
+});
+
 //Mongo Route
 app.post('/printers/', (req, res)=>{
     Printers.create(req.body, (error, createdPrinters)=>{
