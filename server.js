@@ -39,6 +39,14 @@ app.get(`/printers/:index`, ( req, res )=>{
     });
 });
 
+//Edit
+app.get(`/printers/:index/edit`, ( req, res )=>{
+    res.render('edit.ejs',
+    {printers: printers[req.params.index],
+    index: req.params.index});
+});
+  
+
 app.listen(port,() => {
     console.log('listening on port' , port)
 })

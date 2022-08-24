@@ -1,0 +1,14 @@
+<%- include('./partials/header.ejs') %>
+<form action="/printers/<%=index%>?_method=PUT" method="POST">
+    
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name"  value = "<%=printers.name%>" %>></input>
+    <br/>
+
+    <label for="img">Image</label>
+    <input type="text" name ="img" id="img" placeholder="Image Url" alt = "img"></input>
+    <br/>
+
+    <input type="submit" value="Submit Edit"></input>
+  </form>
+<%- include('./partials/footer.ejs') %>
