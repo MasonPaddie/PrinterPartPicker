@@ -3,20 +3,14 @@ const mongoose = require('mongoose');
 parts = [
 ];
 
-
-
 const partsSchema = mongoose.Schema({
     name: {type: String, required: true, unique: true},
+    motionType: {type: String, required: true},
     linearRails: {type: Boolean},
     zMotors: {type: Number},
     img: {type: String},
     price: {type: Number, min: 0, required: true},
 }, { timestamps: true })
-
-const Parts = mongoose.model('Parts',partsSchema)
-
-module.exports = Parts  
-module.exports = parts;
 
 const partsMotionSystemSchema = mongoose.Schema({
     name: {type: String, required: true, unique: true},
@@ -26,87 +20,94 @@ const partsMotionSystemSchema = mongoose.Schema({
     price: {type: Number, min: 0, required: true},
 }, { timestamps: true })
 
+// const partsBedSchema = mongoose.Schema({
+//     name: {type: String, required: true, unique: true},
+//     size: {type: Boolean, required: true},
+//     heated: {type: Boolean, required: true},
+//     material: {type: String, required: true},
+//     img: {type: String},
+//     price: {type: Number, min: 0, required: true},
+// }, { timestamps: true })
+
+// const partsPsuSchema = mongoose.Schema({
+//     name: {type: String, required: true, unique: true},
+//     watts: {type: Number},
+//     volts: {type: Number},
+//     img: {type: String},
+//     price: {type: Number, min: 0, required: true},
+// }, { timestamps: true })
+
+// const partsMotherboardSchema = mongoose.Schema({
+//     name: {type: String, required: true, unique: true},
+//     bits: {type: Number},
+//     img: {type: String},
+//     price: {type: Number, min: 0, required: true},
+// }, { timestamps: true })
+
+// const partsExtruderSchema = mongoose.Schema({
+//     name: {type: String, required: true, unique: true},
+//     directDrive: {type: Boolean},
+//     bowden: {type: Boolean},
+//     diameter: {type: Number},
+//     img: {type: String},
+//     price: {type: Number, min: 0, required: true},
+// }, { timestamps: true })
+
+// const partsHotEndSchema = mongoose.Schema({
+//     name: {type: String, required: true, unique: true},
+//     img: {type: String},
+//     price: {type: Number, min: 0, required: true},
+// }, { timestamps: true })
+
+// const partsNozzleSchema = mongoose.Schema({
+//     name: {type: String, required: true, unique: true},
+//     diameter: {type: Number},
+//     material: {type: String},
+//     img: {type: String},
+//     price: {type: Number, min: 0, required: true},
+// }, { timestamps: true })
+
+// const partsLcdSchema = mongoose.Schema({
+//     name: {type: String, required: true, unique: true},
+//     img: {type: String},
+//     price: {type: Number, min: 0, required: true},
+// }, { timestamps: true })
+
+const Parts = mongoose.model('Parts',partsSchema)
+
+module.exports = Parts  
+
 const PartsMotionSystem = mongoose.model('PartsMotionSystem',partsMotionSystemSchema)
 
 module.exports = PartsMotionSystem 
 
-const partsBedSchema = mongoose.Schema({
-    name: {type: String, required: true, unique: true},
-    size: {type: Boolean, required: true},
-    heated: {type: Boolean, required: true},
-    material: {type: String, required: true},
-    img: {type: String},
-    price: {type: Number, min: 0, required: true},
-}, { timestamps: true })
+// const PartsBed = mongoose.model('PartsBed',partsBedSchema)
 
-const PartsBed = mongoose.model('PartsBed',partsBedSchema)
+// module.exports = PartsBed 
 
-module.exports = PartsBed 
+// const PartsPsu = mongoose.model('PartsPsu',partsPsuSchema)
 
-const partsPsuSchema = mongoose.Schema({
-    name: {type: String, required: true, unique: true},
-    watts: {type: Number},
-    volts: {type: Number},
-    img: {type: String},
-    price: {type: Number, min: 0, required: true},
-}, { timestamps: true })
+// module.exports = PartsPsu 
 
-const PartsPsu = mongoose.model('PartsPsu',partsPsuSchema)
+// const PartsMotherboard = mongoose.model('PartsMotherboard',partsMotherboardSchema)
 
-module.exports = PartsPsu 
+// module.exports = PartsMotherboard 
 
-const partsMotherboardSchema = mongoose.Schema({
-    name: {type: String, required: true, unique: true},
-    bits: {type: Number},
-    img: {type: String},
-    price: {type: Number, min: 0, required: true},
-}, { timestamps: true })
+// const PartsExtruder = mongoose.model('PartsExtruder',partsExtruderSchema)
 
-const PartsMotherboard = mongoose.model('PartsMotherboard',partsMotherboardSchema)
+// module.exports = PartsExtruder 
 
-module.exports = PartsMotherboard 
+// const PartsHotEnd = mongoose.model('PartsHotEnd',partsHotEndSchema)
 
-const partsExtruderSchema = mongoose.Schema({
-    name: {type: String, required: true, unique: true},
-    directDrive: {type: Boolean},
-    bowden: {type: Boolean},
-    diameter: {type: Number},
-    img: {type: String},
-    price: {type: Number, min: 0, required: true},
-}, { timestamps: true })
+// module.exports = PartsHotEnd 
 
-const PartsExtruder = mongoose.model('PartsExtruder',partsExtruderSchema)
+// const PartsNozzle = mongoose.model('PartsNozzle',partsNozzleSchema)
 
-module.exports = PartsExtruder 
+// module.exports = PartsNozzle 
 
-const partsHotEndSchema = mongoose.Schema({
-    name: {type: String, required: true, unique: true},
-    img: {type: String},
-    price: {type: Number, min: 0, required: true},
-}, { timestamps: true })
+// const PartsLcd = mongoose.model('PartsLcd',partsLcdSchema)
 
-const PartsHotEnd = mongoose.model('PartsHotEnd',partsHotEndSchema)
+// module.exports = PartsLcd 
 
-module.exports = PartsHotEnd 
+module.exports = parts;
 
-const partsNozzleSchema = mongoose.Schema({
-    name: {type: String, required: true, unique: true},
-    diameter: {type: Number},
-    material: {type: String},
-    img: {type: String},
-    price: {type: Number, min: 0, required: true},
-}, { timestamps: true })
-
-const PartsNozzle = mongoose.model('PartsNozzle',partsNozzleSchema)
-
-module.exports = PartsNozzle 
-
-const partsLcdSchema = mongoose.Schema({
-    name: {type: String, required: true, unique: true},
-    img: {type: String},
-    price: {type: Number, min: 0, required: true},
-}, { timestamps: true })
-
-const PartsLcd = mongoose.model('PartsLcd',partsLcdSchema)
-
-module.exports = PartsLcd 

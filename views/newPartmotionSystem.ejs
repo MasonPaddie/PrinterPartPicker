@@ -1,0 +1,35 @@
+<%- include('./partials/header.ejs') %>
+<div class="container">
+    <form action="/parts/<%= type %>" method="POST">
+        <h1>New Motion System Entry</h1>
+
+        <label for="type">Type</label>
+        <input type="text" name="type" value="<%= type %>" readonly><br/>
+
+        <!-- dropdown for motionSystem -->
+        <label for="motionType">Motion System:</label>
+        <select name="motionType" required>
+            <option value="cartesian">Cartesian</option>
+            <option value="corexy">Core XY</option>
+            <option value="delta">Delta</option>
+        </select> <br/>
+
+        <label for="name">Name</label>
+        <input type="text" name="name" required><br/>
+
+        <label for="linearRails">Linear Rails</label>
+        <input type="checkbox" name="linearRails"> <br/>
+
+        <label for="zMotors">Number of Z-Motors</label>
+        <input type="number" name="zMotors" required> <br/>
+
+        <label for="img">Image</label>
+        <input type="text" name="img"> <br/>
+
+        <label for="price">Price</label>
+        <input type="number" name="price" required> <br/>
+
+        <input type="submit" value="Make Motion System">
+    </form>
+</div>
+<%- include('./partials/footer.ejs') %>

@@ -39,12 +39,11 @@ app.get(`/parts/new`, ( req, res )=>{
 //New Parts Type
 app.get(`/parts/new/:type`, ( req, res )=>{
     res.render(`newPart${req.params.type}.ejs`, 
-    {});
+    {type: req.params.type});
 });
 
 //Create Printers
 app.post('/printers', ( req, res )=>{
-    console.log(req.body)
     printers.push(req.body)
     res.redirect('/printers')
 });
@@ -52,6 +51,12 @@ app.post('/printers', ( req, res )=>{
 //Create Parts
 app.post('/parts', ( req, res )=>{
     res.redirect(`/parts/new/${req.body.type}`)
+});
+
+//Create Parts Type
+app.post('/parts/:type', ( req, res )=>{
+    parts.push(req.body)
+    res.redirect('/parts')
 });
 
 //Show Printers
