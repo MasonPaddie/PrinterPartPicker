@@ -16,6 +16,29 @@ app.get(`/printers`, ( req, res )=>{
     {printers: printers});
 });
   
+//Mongo Route
+app.post('/printers/', (req, res)=>{
+    Printers.create(req.body, (error, createdPrinters)=>{
+        if (error){
+        	console.log(error);
+        	res.send(error);
+        }
+        else{
+	        res.send(createdPrinters);
+        }
+    });
+});
+  
+//Show
+app.get(`/printers/:index`, ( req, res )=>{
+    const index = req.params.index
+    console.log(printers)
+    res.render('showPrinters.ejs',
+    {printers: printers,
+        index: index
+    });
+});
+
 app.listen(port,() => {
     console.log('listening on port' , port)
 })
