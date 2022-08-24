@@ -1,0 +1,33 @@
+<%- include('./partials/header.ejs') %>
+<div class="container">
+    <form action="/parts/<%= type %>" method="POST">
+        <h1>New Bed Entry</h1>
+
+        <label for="type">Type</label>
+        <input type="text" name="type" value="<%= type %>" readonly><br/>
+
+        <label for="name">Name</label>
+        <input type="text" name="name" required><br/>
+
+        <label for="x-dimension">X-Dimension</label>
+        <input type="number" name="xdimension" required><br/>
+
+        <label for="y-dimension">Y-Dimension</label>
+        <input type="number" name="ydimension" required><br/>
+
+        <label for="material">Material</label>
+        <input type="text" name="material" required><br/>
+
+        <label for="heatedBed">Heated Bed</label>
+        <input type="checkbox" name="heatedBed"><br/>
+
+        <label for="img">Image</label>
+        <input type="text" name="img"> <br/>
+
+        <label for="price">Price</label>
+        <input type="number" name="price" required> <br/>
+
+        <input type="submit" value="Make Bed">
+    </form>
+</div>
+<%- include('./partials/footer.ejs') %>

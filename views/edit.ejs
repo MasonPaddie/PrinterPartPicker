@@ -2,13 +2,57 @@
 <form action="/printers/<%=index%>?_method=PUT" method="POST">
     
     <label for="name">Name</label>
-    <input type="text" name="name" id="name"  value = "<%=printers.name%>" %>></input>
+    <input type="text" name="name" id="name"  value = "<%=printers.name%>">
     <br/>
 
+    <label for="motionSystem">Motion System</label>
+    <input type="text" name="motionSystem" id="motionSystem" value= "<%=printers.motionSystem%>">
+    <br/>
+
+    <label for="bed">Bed</label>
+    <input type="text" name="bed" id="bed" value= "<%=printers.bed%>">
+    <br/>
+
+    <label for="psu">PSU</label>
+    <input type="text" name="psu" id="psu" value= "<%=printers.psu%>">
+    <br/>
+
+    <label for="motherboard">Motherboard</label>
+    <input type="text" name="motherboard" id="motherboard" value= "<%=printers.motherboard%>">
+    <br/>
+    
+    <label for="extruder">Extruder</label>
+    <input type="text" name="extruder" id="extruder" value= "<%=printers.extruder%>">
+    <br/>
+
+    <label for="hotEnd">Hot End</label>
+    <input type="text" name="hotEnd" id="hotEnd" value= "<%=printers.hotEnd%>">
+    <br/>
+
+    <label for="nozzle">Nozzle</label>
+    <input type="text" name="nozzle" id="nozzle" value= "<%=printers.nozzle%>">
+    <br/>
+
+    <label for="lcd">LCD</label>
+    <input type="text" name="lcd" id="lcd" value= "<%=printers.lcd%>">
+    <br/>
+
+    <label for="filaRunout">Filament Runout Sensor</label>
+    <input type="checkbox" name="filaRunout" id="filaRunout" value= "<%=printers.filaRunout%>">
+    <br/>
+
+    <label for="blSensor">Bed Leveling Sensor</label>
+    <input type="checkbox" name="blSensor" id="blSensor" value= "<%=printers.blSensor%>">
+    <br/>
+    
     <label for="img">Image</label>
-    <input type="text" name ="img" id="img" placeholder="Image Url" alt = "img"></input>
+    <input type="text" name ="img" id="img" value="<%=printers.img%>" alt = "img">
     <br/>
 
-    <input type="submit" value="Submit Edit"></input>
+    <label for="price">Price (Based on sum of part price)</label>
+    <input type="text" name="price" id="price" value= "<%=printers.price%>" readonly>
+    <br/>
+
+    <input type="submit" value="Submit Edit">
   </form>
 <%- include('./partials/footer.ejs') %>

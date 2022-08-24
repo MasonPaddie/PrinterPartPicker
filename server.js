@@ -86,7 +86,7 @@ app.get(`/printers/:index/edit`, ( req, res )=>{
 
 //Edit Parts
 app.get(`/parts/:index/edit`, ( req, res )=>{
-    res.render('edit.ejs',
+    res.render('editPart.ejs',
     {parts: parts[req.params.index],
     index: req.params.index});
 });
