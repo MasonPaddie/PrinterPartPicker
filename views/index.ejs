@@ -1,19 +1,30 @@
 <%- include('./partials/header.ejs') %>
 
 <h1>Printers </h1>
-<table class="printers" >
+
+<!-- if there are printers to display -->
+<% if (printers.length > 0) { %>
+
+<table class="printers">
     <tr>
     <% for (let i = 0; i < printers.length; i++) { %>
-            <td><a href='<%= `/printers/${i}` %>'> <%= printers[i].name%></a></td>
-    <% } %>
+    <td><a href='<%= `/printers/${i}` %>'> <%= printers[i].name%></a></td>
+    <%}%>
     </tr>  
     
-    <!-- <tr>
+    <tr>
     <% for (let i = 0; i < printers.length; i++) { %>
-        <td><img src="<%= printers[i].img%>"></img></td>
-    <% } %>  
-    </tr> -->
+    <td><img src="<%= printers[i].img%>"></img></td>
+    <%}%>  
+    </tr>
 
-</table>
+</table> 
+
+<%}%> 
+<% if (printers.length < 1)  { %>
+ 
+<h2>There are no printers to display</h2>
+
+<%}%>
 
 <%- include('./partials/footer.ejs') %>

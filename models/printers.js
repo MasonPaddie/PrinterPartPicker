@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
 printers = [
-
 ];
 
 const printersSchema = mongoose.Schema({
@@ -22,4 +21,5 @@ const printersSchema = mongoose.Schema({
 
 const Printers = mongoose.model('Printers',printersSchema)
 
+module.exports = Printers
 module.exports = printers
