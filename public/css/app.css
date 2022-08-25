@@ -1,3 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2&display=swap');
+
 body {
-    background-color: red;
+    color: rgb(46, 45, 45);
+    background-color: plum;
+    text-align: center;
+    font-family: 'Indie Flower', cursive;
+    -webkit-text-stroke: 2px wheat;
+    
 }
+
+h1 {
+    font-size: 80px;
+}
+
+h2 {
+    font-size: 70px;
+}
+
+a {
+    font-size: 80px;
+    text-decoration: none;
+    color: rgb(46, 45, 45);
+    -webkit-text-stroke: 2px wheat;
+    width: 100px;
+}
+
+nav{ 
+    width: 100%;
+    height: 100px;
+    display: flex;
+}
+
+ul {
+    list-style-type: none;
+    padding: 30px;
+    line-height: 70px;
+}
+
+
+
+ input {
+    font-size: 50px;
+ }
+
+ input[type=checkbox] {
+    size: 50px 50px
+ }
+
+ table {
+    margin-left: auto;
+    margin-right: auto;
+ }
+
+ .headerLink {
+    font-size: 40px;
+    -webkit-text-stroke: 1px wheat;
+    font-weight: bolder;
+    position: absolute
+ }
+
+label {
+    font-size: 60px;
+}
+
+ select {
+    font-size: 60px;
+}
+
+option {
+    font-size: 30px;
+}
+
+
+ #printerLink {
+    left:0%;
+ }
+
+ #partLink {
+    right: 0%;
+ }
+
+ #newPrinterLink {
+    left: 33%
+ }
+
+ #newPartLink {
+    right: 33%
+ }
