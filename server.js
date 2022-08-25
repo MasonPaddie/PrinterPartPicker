@@ -73,7 +73,8 @@ app.get(`/parts/:index`, ( req, res )=>{
     const index = req.params.index
     res.render('showParts.ejs',
     {parts: parts,
-        index: index
+        index: index,
+        keys: (parts[index])
     });
 });
 

@@ -24,6 +24,11 @@ a {
     -webkit-text-stroke: 2px wheat;
     width: 100px;
 }
+ p {
+    font-size: 60px;
+    color: rgb(46, 45, 45);
+    -webkit-text-stroke: 2px wheat;
+ }
 
 nav{ 
     width: 100%;
@@ -44,8 +49,15 @@ ul {
  }
 
  input[type=checkbox] {
-    size: 50px 50px
- }
+      /* Double-sized Checkboxes */
+  -ms-transform: scale(3); /* IE */
+  -moz-transform: scale(3); /* FF */
+  -webkit-transform: scale(3); /* Safari and Chrome */
+  -o-transform: scale(3); /* Opera */
+  transform: scale(3);
+  padding: 40px;
+}
+
 
  table {
     margin-left: auto;
@@ -61,6 +73,8 @@ ul {
 
 label {
     font-size: 60px;
+    padding: 20px;
+    font-weight: bolder;
 }
 
  select {
