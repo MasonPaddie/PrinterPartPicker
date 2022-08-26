@@ -64,7 +64,8 @@ app.get(`/printers/:index`, ( req, res )=>{
     const index = req.params.index
     res.render('showPrinters.ejs',
     {printers: printers,
-        index: index
+        index: index,
+        obj: (printers[index]),
     });
 });
 
@@ -80,8 +81,8 @@ app.get(`/parts/:index`, ( req, res )=>{
 
 //Edit Printers
 app.get(`/printers/:index/edit`, ( req, res )=>{
-    res.render('edit.ejs',
-    {printers: printers[req.params.index],
+    res.render('editPrinter.ejs',
+    {printers: printers,
     index: req.params.index});
 });
 

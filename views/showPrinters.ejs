@@ -1,6 +1,15 @@
 <%- include('./partials/header.ejs') %>
     <h1><%=printers[index].name%> Page</h1>
-    <!-- <img src=<%=(printers[index].img) %> > <br> -->
+    <img src=<%=(printers[index].img) %> > <br>
+
+    <% for (let i =  0; i < Object.keys(obj).length; i++) {%>
+
+        <!-- for each key in the type, show the value of that key -->
+        
+    <p> <%=Object.keys(obj)[i]%>: <%= Object.values(obj)[i] %></p> 
+
+    <% } %>
+
     <a id="editButton" href="/printers/<%= index %>/edit">Edit printer</a>
 
     <br/>
