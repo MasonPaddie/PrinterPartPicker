@@ -74,7 +74,7 @@ app.get(`/parts/:index`, ( req, res )=>{
     res.render('showParts.ejs',
     {parts: parts,
         index: index,
-        keys: (parts[index])
+        obj: (parts[index]),
     });
 });
 
@@ -94,13 +94,15 @@ app.get(`/parts/:index/edit`, ( req, res )=>{
 
 //Update Printers
 app.put('/printers/:index', (req, res) => { 
-    printers[req.params.index] = req.body 
+    printers[req.params.index] = req.body
       res.redirect('/printers')
 })
 
 //Update Parts
 app.put('/parts/:index', (req, res) => { 
-    parts[req.params.index] = req.body 
+    parts[req.params.index].name = req.body.name
+    parts[req.params.index].img = req.body.img
+    parts[req.params.index].price = req.body.price
       res.redirect('/parts')
 })
   
