@@ -1,5 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose');
+const alert = require('alert');
 const app = express()
 const PORT = process.env.PORT||4000
 var printers = require('./models/printers.js')
@@ -61,9 +62,22 @@ app.post('/printers', ( req, res )=>{
         printerPrice += parseInt(printerParts[i].price,10)
     }
 
-    req.body.price = printerPrice
-    printers.push(req.body)
-    res.redirect('/printers')
+    //Restrict the name so that only unique names can be created
+    boolstatus = false;
+    if (printers.length > 0) {
+        for (let i = 0; i < printers.length; i++) {
+            if (printers[i].name === req.body.name) {
+                alert('Please enter unique name')
+                res.redirect('/printers/new')
+                boolstatus = true
+            } 
+        }
+    } 
+
+    if (boolstatus === false) {
+        printers.push(req.body)
+        res.redirect('/printers')
+    }
 });
 
 //Create Parts
@@ -73,8 +87,23 @@ app.post('/parts', ( req, res )=>{
 
 //Create Parts Type
 app.post('/parts/:type', ( req, res )=>{
-    parts.push(req.body)
-    res.redirect('/parts')
+
+    //Restrict the name so that only unique names can be created
+    boolstatus = false;
+    if (parts.length > 0) {
+        for (let i = 0; i < parts.length; i++) {
+            if (parts[i].name === req.body.name) {
+                alert('Please enter unique name')
+                res.redirect('/parts/new')
+                boolstatus = true
+            } 
+        }
+    } 
+
+    if (boolstatus === false) {
+        parts.push(req.body)
+        res.redirect('/parts')
+    }
 });
 
 //Show Printers
