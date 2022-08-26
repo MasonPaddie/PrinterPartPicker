@@ -44,6 +44,24 @@ app.get(`/parts/new/:type`, ( req, res )=>{
 
 //Create Printers
 app.post('/printers', ( req, res )=>{
+
+    //get the price of each part, add it up, and set it as the price of the printer
+    let printerPrice = 0;
+    let printerParts = [];
+
+    //makes the array of objects that make the printer
+    for (let i = 0; i < parts.length; i++) {
+        if (parts[i].name === req.body.motionSystem || parts[i].name === req.body.bed || parts[i].name === req.body.psu || parts[i].name === req.body.motherboard || parts[i].name === req.body.extruder || parts[i].name === req.body.hotEnd || parts[i].name === req.body.nozzle || parts[i].name === req.body.lcd) {
+            printerParts.push(parts[i])
+        }
+    }
+
+    //gets the total price
+    for (let i = 0; i < printerParts.length; i++) {
+        printerPrice += parseInt(printerParts[i].price,10)
+    }
+
+    req.body.price = printerPrice
     printers.push(req.body)
     res.redirect('/printers')
 });
