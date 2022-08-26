@@ -75,6 +75,7 @@ app.post('/printers', ( req, res )=>{
     } 
 
     if (boolstatus === false) {
+        req.body.price = printerPrice
         printers.push(req.body)
         res.redirect('/printers')
     }
@@ -109,10 +110,25 @@ app.post('/parts/:type', ( req, res )=>{
 //Show Printers
 app.get(`/printers/:index`, ( req, res )=>{
     const index = req.params.index
+
+    //Get the names of all the parts in printer
+    let names = Object.values(printers[index])
+
+    //Get the index of these names in the parts array
+    indexArr = [];
+    for (let i = 0; i < parts.length; i++) {
+        for (let j = 0; j < names.length; j++) {
+            if (parts[i].name === names[j]) {
+                indexArr.push(i)
+            }
+        }
+    }
+
     res.render('showPrinters.ejs',
     {printers: printers,
         index: index,
         obj: (printers[index]),
+        indexArr: indexArr
     });
 });
 

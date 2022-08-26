@@ -2,12 +2,17 @@
     <h1><%=printers[index].name%> Page</h1>
     <img src=<%=(printers[index].img) %> > <br>
 
-    <% for (let i =  0; i < Object.keys(obj).length; i++) {%>
+    <% for (let i =  0, j = 0; i < Object.keys(obj).length; i++) {%>
 
         <!-- for each key in the type, show the value of that key -->
         
     <p> <%=Object.keys(obj)[i]%>: <%= Object.values(obj)[i] %></p> 
 
+        <!-- add a link to the appropriate names -->
+        <% if (Object.keys(obj)[i] != 'name' && Object.keys(obj)[i] != 'img' && Object.keys(obj)[i] != 'price') {%>
+            <a id="showPartLink" href="/parts/<%= indexArr[j] %>">Show Part</a>
+            <% j+= 1 %>
+            <% } %>
     <% } %>
 
     <a id="editButton" href="/printers/<%= index %>/edit">Edit printer</a>
