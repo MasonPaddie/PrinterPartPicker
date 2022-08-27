@@ -5,11 +5,12 @@
         <!-- dropdown for type -->
         <label id="basePrinterDropdown" for="basePrinter">Base Printer:</label>
         <select name="basePrinter" >
+            <option value="none">None</option>
            <% for (let i = 0; i < printers.length; i++) {%>
             <option value="<%= printers[i].name %>"> <%= printers[i].name %> </option>
             <% } %>
         </select> <br><br>
 
-        <input type="submit" value="Make New Printer With Selected Printer As A Base">
+        <input type="submit" value="Make New Printer">
     </form>
 <%- include('./partials/footer.ejs') %>

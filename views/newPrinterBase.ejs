@@ -1,18 +1,13 @@
 <%- include('./partials/header.ejs') %>
 <div class="container">
     <h1>New Printer Entry</h1>
-    <form action="/printers" method="POST">
+    <form action="/printers/<%= basePrinter.name %>" method="POST">
         <input type="text" name="name" placeholder="Name" required/><br><br>
         <input type="text" name="img" placeholder="Image URL" ><br><br>
 
-        <!-- dropdown for basePrinter -->
+        <!-- text box for basePrinter -->
         <label for="basePrinter">Base Printer</label>
-        <select name = "basePrinter">
-            <option value="">None</option>
-            <% for (let i = 0; i < printers.length; i++) { %>
-                <option value="<% printers[i].name %>"><%= printers[i].name %></option>
-            <%}%> 
-        </select> <br/>
+        <input type="text" name ="basePrinter" value="<%= basePrinter.name %>" readonly> <br/>
 
         <!-- dropdown for motionSystem -->
         <label for="motionSystem">Motion System</label>
@@ -102,6 +97,8 @@
      <label for="blSensor">Bed Leveling Sensor</label>
      <input type="checkbox" name="blSensor"><br/>
 
+     <% basePrinter = "" %>
+     
      <input type="submit" value="Make Printer">
     </form>
 </div>
