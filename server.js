@@ -51,21 +51,21 @@ app.get(`/printers/new/:basePrinter`, ( req, res )=>{
     // Get the index of the base printer and use it to get the entire object
     let baseIndex = -1
     let newBasePrinter = printers[0]
-    let baseSelected = false
+    let baseSelected = true
     
     for (let i = 0; i < printers.length; i++) {
         if (printers[i].name === req.params.basePrinter) {
             baseIndex = i
-            baseSelected = true
         }
     }
-    
+    console.log(baseIndex)
     //entire object
     console.log(newBasePrinter)
     if (baseIndex != -1) {
-        basePrinter = printers[baseIndex]
-
-    } 
+        newBasePrinter = printers[baseIndex]
+    } else {
+        baseSelected = false
+    }
 
     res.render('newPrinterBase.ejs', 
     {parts: parts,

@@ -7,15 +7,28 @@
 
         <!-- text box for basePrinter -->
         <label for="basePrinter">Base Printer</label>
+        <% if (baseSelected === true) {%>
         <input type="text" name ="basePrinter" value="<%= basePrinter.name %>" readonly> <br/>
+        <% } %>
+
+        <% if (baseSelected === false) {%>
+            <input type="text" name ="basePrinter" value="none" readonly> <br/>
+        <% } %>
+    
 
         <!-- dropdown for motionSystem -->
         <label for="motionSystem">Motion System</label>
         <select name = "motionSystem" required>
             <% for (let i = 0; i < parts.length; i++) { %>
                 <% if (parts[i].type === "motionSystem") { %>
-                <option><%= parts[i].name %></option>
-                <%}%>
+                    <% if (parts[i].name === basePrinter.motionSystem) {%>
+                        <option value="<%= parts[i].name %>" selected><%= parts[i].name %></option>
+                    <% } %> 
+
+                    <% if (parts[i].name != basePrinter.motionSystem) {%>
+                        <option value="<%= parts[i].name %>"><%= parts[i].name %></option>
+                    <% } %> 
+                <% } %>
             <%}%> 
         </select> <br/>
 
@@ -24,69 +37,111 @@
         <select name = "bed" required>
             <% for (let i = 0; i < parts.length; i++) { %>
                 <% if (parts[i].type === "bed") { %>
-                <option><%= parts[i].name %></option>
-                <%}%>
-            <%}%> 
+                    <% if (parts[i].name === basePrinter.bed) {%>
+                        <option value="<%= parts[i].name %>" selected><%= parts[i].name %></option>
+                    <% } %> 
+
+                    <% if (parts[i].name != basePrinter.bed) {%>
+                        <option value="<%= parts[i].name %>"><%= parts[i].name %></option>
+                    <% } %> 
+                <% } %>
+            <%}%>
         </select> <br/>
 
      <!-- dropdown for psu -->
      <label for="psu">PSU</label>
      <select name = "psu" required>
-         <% for (let i = 0; i < parts.length; i++) { %>
-             <% if (parts[i].type === "psu") { %>
-             <option><%= parts[i].name %></option>
-             <%}%>
-         <%}%> 
+        <% for (let i = 0; i < parts.length; i++) { %>
+            <% if (parts[i].type === "psu") { %>
+                <% if (parts[i].name === basePrinter.psu) {%>
+                    <option value="<%= parts[i].name %>" selected><%= parts[i].name %></option>
+                <% } %> 
+
+                <% if (parts[i].name != basePrinter.psu) {%>
+                    <option value="<%= parts[i].name %>"><%= parts[i].name %></option>
+                <% } %> 
+            <% } %>
+        <%}%> 
      </select> <br/>
 
      <!-- dropdown for motherboard -->
      <label for="motherboard">Motherboard</label>
      <select name = "motherboard" required>
-         <% for (let i = 0; i < parts.length; i++) { %>
-             <% if (parts[i].type === "motherboard") { %>
-             <option><%= parts[i].name %></option>
-             <%}%>
-         <%}%> 
+        <% for (let i = 0; i < parts.length; i++) { %>
+            <% if (parts[i].type === "motherboard") { %>
+                <% if (parts[i].name === basePrinter.motherboard) {%>
+                    <option value="<%= parts[i].name %>" selected><%= parts[i].name %></option>
+                <% } %> 
+
+                <% if (parts[i].name != basePrinter.motherboard) {%>
+                    <option value="<%= parts[i].name %>"><%= parts[i].name %></option>
+                <% } %> 
+            <% } %>
+        <%}%>
      </select> <br/>
 
      <!-- dropdown for extruder -->
      <label for="extruder">Extruder</label>
      <select name = "extruder" required>
-         <% for (let i = 0; i < parts.length; i++) { %>
-             <% if (parts[i].type === "extruder") { %>
-             <option><%= parts[i].name %></option>
-             <%}%>
-         <%}%> 
+        <% for (let i = 0; i < parts.length; i++) { %>
+            <% if (parts[i].type === "extruder") { %>
+                <% if (parts[i].name === basePrinter.extruder) {%>
+                    <option value="<%= parts[i].name %>" selected><%= parts[i].name %></option>
+                <% } %> 
+
+                <% if (parts[i].name != basePrinter.extruder) {%>
+                    <option value="<%= parts[i].name %>"><%= parts[i].name %></option>
+                <% } %> 
+            <% } %>
+        <%}%>
      </select> <br/>
 
      <!-- dropdown for hotEnd -->
      <label for="hotEnd">Hot End</label>
      <select name = "hotEnd" required>
-         <% for (let i = 0; i < parts.length; i++) { %>
-             <% if (parts[i].type === "hotEnd") { %>
-             <option><%= parts[i].name %></option>
-             <%}%>
-         <%}%> 
+        <% for (let i = 0; i < parts.length; i++) { %>
+            <% if (parts[i].type === "hotEnd") { %>
+                <% if (parts[i].name === basePrinter.hotEnd) {%>
+                    <option value="<%= parts[i].name %>" selected><%= parts[i].name %></option>
+                <% } %> 
+
+                <% if (parts[i].name != basePrinter.hotEnd) {%>
+                    <option value="<%= parts[i].name %>"><%= parts[i].name %></option>
+                <% } %> 
+            <% } %>
+        <%}%> 
      </select> <br/>
    
      <!-- dropdown for nozzle -->
      <label for="nozzle">Nozzle</label>
      <select name = "nozzle" required>
-         <% for (let i = 0; i < parts.length; i++) { %>
-             <% if (parts[i].type === "nozzle") { %>
-             <option><%= parts[i].name %></option>
-             <%}%>
-         <%}%> 
+        <% for (let i = 0; i < parts.length; i++) { %>
+            <% if (parts[i].type === "nozzle") { %>
+                <% if (parts[i].name === basePrinter.nozzle) {%>
+                    <option value="<%= parts[i].name %>" selected><%= parts[i].name %></option>
+                <% } %> 
+
+                <% if (parts[i].name != basePrinter.nozzle) {%>
+                    <option value="<%= parts[i].name %>"><%= parts[i].name %></option>
+                <% } %> 
+            <% } %>
+        <%}%>
      </select> <br/>
 
      <!-- dropdown for lcd -->
      <label for="lcd">LCD</label>
      <select name = "lcd">
-         <% for (let i = 0; i < parts.length; i++) { %>
-             <% if (parts[i].type === "lcd") { %>
-             <option><%= parts[i].name %></option>
-             <%}%>
-         <%}%> 
+        <% for (let i = 0; i < parts.length; i++) { %>
+            <% if (parts[i].type === "lcd") { %>
+                <% if (parts[i].name === basePrinter.lcd) {%>
+                    <option value="<%= parts[i].name %>" selected><%= parts[i].name %></option>
+                <% } %> 
+
+                <% if (parts[i].name != basePrinter.lcd) {%>
+                    <option value="<%= parts[i].name %>"><%= parts[i].name %></option>
+                <% } %> 
+            <% } %>
+        <%}%> 
      </select> <br/>
 
     <!-- checkbox for filaRunout -->
