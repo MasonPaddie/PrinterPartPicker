@@ -1,14 +1,14 @@
 const mongoose = require('mongoose');
 
 parts = [ 
-    {name: "Sovol SV01 Motion System",type: "motionSystem", linearRails: true, zMotors: 2, zdimension: 300, img: "", price: 50},
-    {name: "Sovol Flexible Bed", type:"bed", xdimension: 280, ydimension: 240, heatedBed: true, material: "glass", img: "", price: 30},
-    {name: "Sovol SV01 PSU", type: "psu", watts: 100, volts: 12, img: "", price: 30},
-    {name: "BIGTREETECH mini e3", type: "motherboard", bits: 32, img: "", price: 50},
-    {name: "Titan", type: "extruder", directDrive: true, bowden: false, diameter: 1.75, img: "", price: 30},
-    {name: "E3D V6", type: "hotEnd", img: "", price: 50},
-    {name: "Standard 0.4 Nozzle", type: "nozzle", diameter: 0.4, material: "brass", img: "", price: 5},
-    {name: "TFT35", type: "lcd", img:"", price: 50}
+    {name: "Sovol SV01 Motion System",type: "motionSystem", linearRails: true, zMotors: 2, zdimension: 300, img: "https://www.gabrian.com/wp-content/uploads/2022/01/t-slot-extrusions-with-accessories-500.jpeg", price: 50},
+    {name: "Sovol Flexible Bed", type:"bed", xdimension: 280, ydimension: 240, heatedBed: true, material: "glass", img: "https://cdn.shopify.com/s/files/1/0051/5548/7832/products/4_1000x.jpg?v=1643525062", price: 30},
+    {name: "Meanwell LRS-350-24", type: "psu", watts: 350, volts: 24, img: "https://cdn.shopify.com/s/files/1/0051/5548/7832/products/Meanwell_Power-1_1000x.jpg?v=1637666223", price: 30},
+    {name: "BIGTREETECH skr mini e3", type: "motherboard", bits: 32, img: "https://notenoughtech.com/wp-content/uploads/2022/02/BigTreeTech-SKR-Mini-E3-V3.0-1-2.jpg?x98242", price: 50},
+    {name: "Titan style", type: "extruder", directDrive: true, bowden: false, diameter: 1.75, img: "https://cdn.shopify.com/s/files/1/0051/5548/7832/files/Titan-extruder-3.jpg?v=1574476049", price: 30},
+    {name: "E3D V6", type: "hotEnd", img: "http://cdn.shopify.com/s/files/1/0259/1948/8059/products/v6-hero.jpg?v=1588328839", price: 50},
+    {name: "MK8 0.4 Nozzle", type: "nozzle", diameter: 0.4, material: "brass", img: "https://s9352.pcdn.co/wp-content/uploads/2015/01/2016-03-21-nozzle-2.jpg", price: 5},
+    {name: "12864 ZW", type: "lcd", img:"https://cdn.shopify.com/s/files/1/0051/5548/7832/products/SOVOL_LCD_7_1000x.jpg?v=1639622031", price: 50}
 ];
 
 const partsSchema = mongoose.Schema({

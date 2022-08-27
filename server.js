@@ -58,7 +58,7 @@ app.get(`/printers/new/:basePrinter`, ( req, res )=>{
             baseIndex = i
         }
     }
-    console.log(baseIndex)
+    
     //entire object
     console.log(newBasePrinter)
     if (baseIndex != -1) {

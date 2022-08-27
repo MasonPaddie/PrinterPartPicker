@@ -1,6 +1,7 @@
-<%- include('./partials/header.ejs') %>
-    <h1><%=printers[index].name%></h1>
-    <img src=<%=(printers[index].img) %> > <br>
+<%- include('./partials/headerPrinter.ejs') %>
+    <h1><%=printers[index].name%></h1><br/>
+    <a href="/printers" class="backLabel">Back to printers page</a><br/>
+    <img id="showPrinterImg" src=<%=(printers[index].img) %> > <br/>
 
     <% for (let i =  0, j = 0; i < Object.keys(obj).length; i++) {%>
 

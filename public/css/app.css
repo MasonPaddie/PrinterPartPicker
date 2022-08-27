@@ -6,7 +6,6 @@ body {
     text-align: center;
     font-family: 'Indie Flower', cursive;
     -webkit-text-stroke: 2px wheat;
-    
 }
 
 h1 {
@@ -22,7 +21,7 @@ a {
     text-decoration: none;
     color: rgb(46, 45, 45);
     -webkit-text-stroke: 2px wheat;
-    width: 100px;
+    width: 150px;
 }
  p {
     font-size: 60px;
@@ -31,7 +30,8 @@ a {
  }
 
  td {
-    padding-right: 50px;
+    padding-right: 20px;
+    font-size: 60px;
  }
 
 nav{ 
@@ -45,8 +45,6 @@ ul {
     padding: 30px;
     line-height: 70px;
 }
-
-
 
  input {
     font-size: 50px;
@@ -94,6 +92,10 @@ button {
    -webkit-text-stroke: 2px wheat;
 }
 
+.backLabel {
+   -webkit-text-stroke: 2px rgb(139, 139, 192);
+   color: rgb(60, 60, 60);
+}
 
 .showPartLink {
    font-size: 60px;
@@ -110,13 +112,138 @@ button {
 .printerAtts u:after {
    content: "\00a0\00a0\00a0\00a0";
 }
+ 
+.indexDivLink{
+   font-size: 60px;
+   -webkit-text-stroke: 2px rgb(139, 139, 192);
+   color: rgb(60, 60, 60);
+   border-bottom: 5px solid black
+}
+
+.tableTitle {
+   font-size: 90px;
+}
+
+.indexDivImg {
+   width: 300px;
+   border: 3px solid black;
+   border-radius: 10px;
+}
 
  #homeLink {
    right: 46%;
    width: 10%;
+   text-align: center;
+   -webkit-text-stroke: 1px rgb(139, 139, 192);
+   color: rgb(60, 60, 60);
 }
 
  #newLink {
-    left: 0%
+    left: 0%;
+    text-align: left;
+    -webkit-text-stroke: 1px rgb(139, 139, 192);
+    color: rgb(60, 60, 60);
  }
 
+ #rightLink {
+   right: 0%;
+   text-align: right;
+   -webkit-text-stroke: 1px rgb(139, 139, 192);
+   color: rgb(60, 60, 60);
+}
+
+ #recentPrinterLink {
+   -webkit-text-stroke: 2px rgb(139, 139, 192);
+   color: rgb(60, 60, 60);
+ }
+
+ #myPrinterLink {
+   -webkit-text-stroke: 2px rgb(139, 139, 192);
+   color: rgb(60, 60, 60);
+ }
+ 
+ #newPrinter {
+   position:absolute;
+   width: 600px;
+   left: 13%;
+   top: 25%;
+   border-bottom: 5px solid black;
+ }
+  
+ #newPart{
+   position:absolute;
+   width: 600px;
+   right: 13%;
+   top: 25%;
+   border-bottom: 5px solid black;
+ }
+
+ #newPartImg{
+   position:absolute;
+   width: 600px;
+   right: 12%;
+   top: 40%;
+   border: 8px solid black;
+   border-radius: 10px;
+ }
+
+ #newPrinterImg{
+   position:absolute;
+   width: 600px;
+   left: 12%;
+   top: 40%;
+   border: 8px solid black;
+   border-radius: 10px;
+ }
+
+#newPart:hover + #newPartImg{
+   border-bottom: none;
+ }
+
+ #myPrinterImg {
+   width: 500px;
+   border: 8px solid black;
+   border-radius: 15px;
+ }
+
+ #recentPrinterImg {
+   width: 500px;
+   border: 8px solid black;
+   border-radius: 15px;
+ }
+
+ #showPrinterImg {
+   width: 500px;
+   border: 8px solid black;
+   border-radius: 15px;
+ }
+
+ #showPartImg {
+   width: 500px;
+   border: 8px solid black;
+   border-radius: 15px;
+ }
+
+ @media only screen and (max-width: 1000px) {
+   #newPartImg {
+     width: 300px;
+     border: 2px;
+     border-radius: 5px;;
+   }
+
+   #newPrinterImg {
+      width: 300px;
+      border: 2px;
+      border-radius: 5px;;
+    }
+
+    #newPart {
+      width: 300px;
+      font-size: 50px;
+    }
+
+    #newPrinter {
+      width: 300px;
+      font-size: 50px;
+    }
+ }

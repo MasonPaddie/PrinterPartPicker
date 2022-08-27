@@ -1,4 +1,4 @@
-<%- include('./partials/header.ejs') %>
+<%- include('./partials/headerPart.ejs') %>
 
 <h1>Parts </h1>
 
@@ -7,15 +7,22 @@
 
 <div class="indexDiv">
     <table class="parts">
-        
+        <tr>
+            <td class="tableTite" id="partName"> Name </td>
+            <td class="tableTite" id="partType"> Type </td>
+            <td class="tableTite" id="partPrice"> Price</td>
+        </tr>
         <% for (let i = 0; i < parts.length; i++) { %>
             <tr>
                 <td><a class="indexDivLink" href='<%= `/parts/${i}` %>'> <%= parts[i].name %></a></td>
-                <%}%> 
-                
-                <% for (let i = 0; i < parts.length; i++) { %>
-                <td><img class="indexDivImg" src="<%= parts[i].img%>"></img></td>
+                <td><p class="indexDivType"> <%=parts[i].type %></p></td>
+                <td><p class="indexDivPrice"><%=parts[i].price %></p></td>
             </tr> 
+
+            <tr>
+                <td><img class="indexDivImg" src="<%= parts[i].img%>"></img></td>
+                <td></td>
+            </tr>
         <%}%>  
     
 

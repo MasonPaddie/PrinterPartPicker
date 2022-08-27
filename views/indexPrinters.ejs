@@ -1,4 +1,4 @@
-<%- include('./partials/header.ejs') %>
+<%- include('./partials/headerPrinter.ejs') %>
 
 <h1>Printers </h1>
 
@@ -7,14 +7,18 @@
 
 <div class="indexDiv">
     <table class="printers">
-        
+            <tr>
+                <td class="tableTite"><p>Printer Name</p></td>
+                <td class="tableTite"><p>Printer Price</p></td>
+            </tr>
             <% for (let i = 0; i < printers.length; i++) { %>
                 <tr>
-                    <td><a href='<%= `/printers/${i}` %>'> <%= printers[i].name%></a></td>
-                    <%}%>
-        
-                    <% for (let i = 0; i < printers.length; i++) { %>
-                    <td><img src="<%= printers[i].img%>"></img></td>
+                    <td><a class="indexDivLink" href='<%= `/printers/${i}` %>'> <%= printers[i].name%></a></td>
+                    <td><p class="indexDivPrice"><%= printers[i].price %></p></td>
+                </tr>
+
+                <tr>
+                    <td><img class="indexDivImg" src="<%= printers[i].img%>"></img></td>
                 </tr>
             <%}%>  
             

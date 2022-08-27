@@ -1,6 +1,10 @@
-<%- include('./partials/header.ejs') %>
+<%- include('./partials/headerPart.ejs') %>
     <h1><%=obj.name%> Page</h1> <br/>
-    <img src=<%=(obj.img) %> > <br/>
+    <form>
+        <input type="button" value="Back To Parts" onclick="history.back()">
+    </form> <br/>
+    
+    <img id="showPartImg" src=<%=(obj.img) %> > <br/>
 
     <% for (let i =  0; i < Object.keys(obj).length; i++) {%>
 
