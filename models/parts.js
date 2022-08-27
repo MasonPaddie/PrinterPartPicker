@@ -5,7 +5,7 @@ parts = [
     {name: "Sovol Flexible Bed", type:"bed", xdimension: 280, ydimension: 240, heatedBed: true, material: "glass", img: "", price: 30},
     {name: "Sovol SV01 PSU", type: "psu", watts: 100, volts: 12, img: "", price: 30},
     {name: "BIGTREETECH mini e3", type: "motherboard", bits: 32, img: "", price: 50},
-    {name: "Titan", type: "extruder", directDrive: true, bowden: false, diameter: 1.75, img: "", price: ""},
+    {name: "Titan", type: "extruder", directDrive: true, bowden: false, diameter: 1.75, img: "", price: 30},
     {name: "E3D V6", type: "hotEnd", img: "", price: 50},
     {name: "Standard 0.4 Nozzle", type: "nozzle", diameter: 0.4, material: "brass", img: "", price: 5},
     {name: "TFT35", type: "lcd", img:"", price: 50}

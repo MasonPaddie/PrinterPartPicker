@@ -1,15 +1,72 @@
 <%- include('./partials/header.ejs') %>
-    <h1><%=printers[index].name%> Page</h1>
+    <h1><%=printers[index].name%></h1>
     <img src=<%=(printers[index].img) %> > <br>
 
     <% for (let i =  0, j = 0; i < Object.keys(obj).length; i++) {%>
 
         <!-- for each key in the type, show the value of that key -->
         
-    <p class="printerAtts"> <%=Object.keys(obj)[i]%>: <%= Object.values(obj)[i] %></p> 
+        <p class="printerAtts"> 
+            <% if (Object.keys(obj)[i] === "name") {%>
+                Name: <%= Object.values(obj)[i] %>
+            <% } %>
+
+            <% if (Object.keys(obj)[i] === "basePrinter") {%>
+                Base Printer: <%= Object.values(obj)[i] %>
+            <% } %>
+
+            <% if (Object.keys(obj)[i] === "motionSystem") {%>
+                Motion System: <%= Object.values(obj)[i] %>
+            <% } %>
+
+            <% if (Object.keys(obj)[i] === "bed") {%>
+                Bed: <%= Object.values(obj)[i] %>
+            <% } %>
+
+            <% if (Object.keys(obj)[i] === "psu") {%>
+                PSU: <%= Object.values(obj)[i] %>
+            <% } %>
+
+            <% if (Object.keys(obj)[i] === "motherboard") {%>
+                Motherboard: <%= Object.values(obj)[i] %>
+            <% } %>
+
+            <% if (Object.keys(obj)[i] === "extruder") {%>
+                Extruder: <%= Object.values(obj)[i] %>
+            <% } %>
+            
+            <% if (Object.keys(obj)[i] === "hotEnd") {%>
+                Hot End: <%= Object.values(obj)[i] %>
+            <% } %>
+
+            <% if (Object.keys(obj)[i] === "nozzle") {%>
+                Nozzle: <%= Object.values(obj)[i] %>
+            <% } %>
+
+            <% if (Object.keys(obj)[i] === "lcd") {%>
+                LCD: <%= Object.values(obj)[i] %>
+            <% } %>
+
+            <% if (Object.keys(obj)[i] === "img") {%>
+                Image URL: <%= Object.values(obj)[i] %>
+            <% } %>
+
+            <% if (Object.keys(obj)[i] === "filaRunout") {%>
+                Filament Runout Sensor: <%= Object.values(obj)[i] %>
+            <% } %>
+
+            <% if (Object.keys(obj)[i] === "blSensor") {%>
+                Bed Leveling Sensor: <%= Object.values(obj)[i] %>
+            <% } %>
+
+            <% if (Object.keys(obj)[i] === "price") {%>
+                Price of all parts: <%= Object.values(obj)[i] %>
+            <% } %>
+
+        </p> 
 
         <!-- add a link to the appropriate names -->
-        <% if (Object.keys(obj)[i] != 'name' && Object.keys(obj)[i] != 'img' && Object.keys(obj)[i] != 'price') {%>
+        <% if (Object.keys(obj)[i] != 'name' && Object.keys(obj)[i] != 'img' && Object.keys(obj)[i] != 'price' && Object.keys(obj)[i] != 'filaRunout' && Object.keys(obj)[i] != 'blSensor' && j < 8) {%>
             <a class="showPartLink" href="/parts/<%= indexArr[j] %>">Show Part</a>
             <% j+= 1 %>
             <% } %>

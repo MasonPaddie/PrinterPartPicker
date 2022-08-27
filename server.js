@@ -34,10 +34,27 @@ app.get(`/parts`, ( req, res )=>{
     {parts: parts});
 });
 
+//New Entry Route
+app.get(`/new`, ( req, res )=>{
+    res.render('newEntry.ejs', {});
+});
+
 //New Printers
 app.get(`/printers/new`, ( req, res )=>{
     res.render('newPrinter.ejs', 
-    {parts: parts});
+    {printers: printers});
+});
+
+//New Printers base printer
+app.get(`/printers/new/:basePrinter`, ( req, res )=>{
+
+    //Get the object of the baseprinter selected
+    const basePrinter = printers[Object.keys(printers).indexOf(req.params.basePrinter)]
+
+    res.render('newPrinterBase.ejs', 
+    {parts: parts,
+        basePrinter: basePrinter
+    });
 });
 
 //New Parts
@@ -54,6 +71,11 @@ app.get(`/parts/new/:type`, ( req, res )=>{
 
 //Create Printers
 app.post('/printers', ( req, res )=>{
+    res.redirect(`/printers/new/${req.body.basePrinter}`)
+});
+
+//Create Printers Base Pritner
+app.post('/printers/:basePrinter', ( req, res )=>{
 
     //get the price of each part, add it up, and set it as the price of the printer
     let printerPrice = 0;
@@ -71,6 +93,20 @@ app.post('/printers', ( req, res )=>{
         printerPrice += parseInt(printerParts[i].price,10)
     }
 
+    if (req.body.filaRunout == "on") {
+        req.body.filaRunout = true
+        req.body.price += 25
+    } else {
+        req.body.filaRunout = false
+    }
+
+    if (req.body.blSensor == "on") {
+        req.body.blSensor = true
+        req.body.price += 45
+    } else {
+        req.body.blSensor = false
+    }
+    
     //Restrict the name so that only unique names can be created
     boolstatus = false;
     if (printers.length > 0) {

@@ -111,18 +111,12 @@ button {
    content: "\00a0\00a0\00a0\00a0";
 }
 
- #printerLink {
-    left:0%;
+ #homeLink {
+   right: 46%;
+   width: 10%;
+}
+
+ #newLink {
+    left: 0%
  }
 
- #partLink {
-    right: 0%;
- }
-
- #newPrinterLink {
-    left: 33%
- }
-
- #newPartLink {
-    right: 33%
- }
