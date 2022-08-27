@@ -5,9 +5,7 @@ parts = [
 
 const partsSchema = mongoose.Schema({
     name: {type: String, required: true, unique: true},
-    motionType: {type: String, required: true},
-    linearRails: {type: Boolean},
-    zMotors: {type: Number},
+    type: {type: String, required: true},
     img: {type: String},
     price: {type: Number, min: 0, required: true},
 }, { timestamps: true })

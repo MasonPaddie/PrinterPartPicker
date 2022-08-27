@@ -89,6 +89,21 @@ option {
     font-size: 30px;
 }
 
+.showPartLink {
+   font-size: 60px;
+   position: absolute;
+   right: 0%;
+   width: 800px;
+}
+
+.printerAtts { 
+   text-align: left;
+   text-decoration: underline;
+}
+
+.printerAtts u:after {
+   content: "\00a0\00a0\00a0\00a0";
+}
 
  #printerLink {
     left:0%;

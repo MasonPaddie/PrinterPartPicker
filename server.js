@@ -14,8 +14,14 @@ app.use(express.urlencoded({extended: true}))
 app.use(methodOverride('_method'))
 
 //Index Printers
-app.get(`/printers`, ( req, res )=>{
+app.get(`/`, ( req, res )=>{
     res.render('index.ejs', 
+    {});
+});
+
+//Index Printers
+app.get(`/printers`, ( req, res )=>{
+    res.render('indexPrinters.ejs', 
     {printers: printers});
 });
   
@@ -27,7 +33,7 @@ app.get(`/parts`, ( req, res )=>{
 
 //New Printers
 app.get(`/printers/new`, ( req, res )=>{
-    res.render('new.ejs', 
+    res.render('newPrinter.ejs', 
     {parts: parts});
 });
 

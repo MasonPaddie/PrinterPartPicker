@@ -1,30 +1,30 @@
-<%- include('./partials/header.ejs') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Printer Part Picker</title>
+</head>
+<body>
 
-<h1>Printers </h1>
+    <h1>Printer Part Picker</h1>
 
-<!-- if there are printers to display -->
-<% if (printers.length > 0) { %>
+    <form action="/printers">
+        <button type="submit">View All Printers</button>
+    </form>
 
-<table class="printers">
-    <tr>
-    <% for (let i = 0; i < printers.length; i++) { %>
-    <td><a href='<%= `/printers/${i}` %>'> <%= printers[i].name%></a></td>
-    <%}%>
-    </tr>  
+    <form action="/parts">
+        <button type="submit">View All Parts</button>
+    </form>
     
-    <tr>
-    <% for (let i = 0; i < printers.length; i++) { %>
-    <td><img src="<%= printers[i].img%>"></img></td>
-    <%}%>  
-    </tr>
+    <form action="/printers/new">
+        <button type="submit">New Printer</button>
+    </form>
+    
+    <form action="/parts/new">
+        <button type="submit">New Part</button>
+    </form>
 
-</table> 
-
-<%}%> 
-<% if (printers.length < 1)  { %>
- 
-<h2>There are no printers to display</h2>
-
-<%}%>
-
-<%- include('./partials/footer.ejs') %>
+</body>
+</html>
