@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="/css/app.css">  
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,21 +11,27 @@
 
     <h1>Printer Part Picker</h1>
 
-    <form action="/printers">
+    <form action="/printers" class="homePageLink">
         <button type="submit">View All Printers</button>
-    </form>
+    </form> <br/>
 
-    <form action="/parts">
+    <form action="/parts" class="homePageLink">
         <button type="submit">View All Parts</button>
-    </form>
+    </form> <br/>
     
-    <form action="/printers/new">
+    <form action="/printers/new" class="homePageLink">
         <button type="submit">New Printer</button>
-    </form>
+    </form> <br/>
     
-    <form action="/parts/new">
+    <form action="/parts/new" class="homePageLink">
         <button type="submit">New Part</button>
-    </form>
+    </form> <br/>
+
+    <a href="/printers/<%= recentPrinterIndex%>" id="recentPrinterLink"> See Most Recent Printer</a>
+    <img src="<%= recentPrinter %>" id="recentPrinterImg"></img> 
+
+    <a href="/printers/0" id="myPrinterLink"> See My Printer</a>
+    <img src="<%= myPrinter %>" id="myPrinterImg"></img> 
 
 </body>
 </html>

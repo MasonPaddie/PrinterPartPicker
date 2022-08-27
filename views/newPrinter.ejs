@@ -8,6 +8,7 @@
         <!-- dropdown for basePrinter -->
         <label for="basePrinter">Base Printer</label>
         <select name = "basePrinter">
+            <option value="">None</option>
             <% for (let i = 0; i < printers.length; i++) { %>
                 <option value="<% printers[i].name %>"><%= printers[i].name %></option>
             <%}%> 

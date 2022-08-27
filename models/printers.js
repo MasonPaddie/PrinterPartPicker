@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+var parts = require('./parts.js')
 
-printers = [
+printers = [{ name: "Modified Sovol SV01", basePrinter:"", motionSystem: parts[0].name, bed: parts[1].name, psu: parts[2].name, motherboard: parts[3].name, extruder: parts[4].name, hotEnd: parts[5].name, nozzle: parts[6].name, lcd: parts[7].name, img:""}
 ];
 
 const printersSchema = mongoose.Schema({

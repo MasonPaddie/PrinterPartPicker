@@ -5,20 +5,21 @@
 <!-- if there are printers to display -->
 <% if (printers.length > 0) { %>
 
-<table class="printers">
-    <tr>
-    <% for (let i = 0; i < printers.length; i++) { %>
-    <td><a href='<%= `/printers/${i}` %>'> <%= printers[i].name%></a></td>
-    <%}%>
-    </tr>  
-    
-    <tr>
-    <% for (let i = 0; i < printers.length; i++) { %>
-    <td><img src="<%= printers[i].img%>"></img></td>
-    <%}%>  
-    </tr>
-
-</table> 
+<div class="indexDiv">
+    <table class="printers">
+        
+            <% for (let i = 0; i < printers.length; i++) { %>
+                <tr>
+                    <td><a href='<%= `/printers/${i}` %>'> <%= printers[i].name%></a></td>
+                    <%}%>
+        
+                    <% for (let i = 0; i < printers.length; i++) { %>
+                    <td><img src="<%= printers[i].img%>"></img></td>
+                </tr>
+            <%}%>  
+            
+    </table> 
+</div>
 
 <%}%> 
 <% if (printers.length < 1)  { %>

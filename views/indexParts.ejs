@@ -5,20 +5,22 @@
 <!-- if there are parts to display -->
 <% if (parts.length > 0) { %>
 
-<table class="parts">
-    <tr>
-    <% for (let i = 0; i < parts.length; i++) { %>
-    <td><a href='<%= `/parts/${i}` %>'> <%= parts[i].name %></a></td>
-    <%}%>
-    </tr>  
+<div class="indexDiv">
+    <table class="parts">
+        
+        <% for (let i = 0; i < parts.length; i++) { %>
+            <tr>
+                <td><a class="indexDivLink" href='<%= `/parts/${i}` %>'> <%= parts[i].name %></a></td>
+                <%}%> 
+                
+                <% for (let i = 0; i < parts.length; i++) { %>
+                <td><img class="indexDivImg" src="<%= parts[i].img%>"></img></td>
+            </tr> 
+        <%}%>  
     
-    <tr>
-    <% for (let i = 0; i < parts.length; i++) { %>
-    <td><img src="<%= parts[i].img%>"></img></td>
-    <%}%>  
-    </tr>
 
-</table> 
+    </table> 
+</div>
 
 <%}%> 
 <% if (parts.length < 1)  { %>

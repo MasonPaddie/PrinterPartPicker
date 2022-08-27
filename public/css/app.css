@@ -89,6 +89,12 @@ option {
     font-size: 30px;
 }
 
+button {
+   font-size: 60px;
+   -webkit-text-stroke: 2px wheat;
+}
+
+
 .showPartLink {
    font-size: 60px;
    position: absolute;

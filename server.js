@@ -16,7 +16,10 @@ app.use(methodOverride('_method'))
 //Index Printers
 app.get(`/`, ( req, res )=>{
     res.render('index.ejs', 
-    {});
+    {recentPrinter: printers[printers.length-1],
+        recentPrinterIndex: printers.length - 1,
+        myPrinter: printers[0]
+    });
 });
 
 //Index Printers
