@@ -40,8 +40,8 @@ const partsBedSchema = mongoose.Schema({
 
 const partsPsuSchema = mongoose.Schema({
     name: {type: String, required: true, unique: true},
-    watts: {type: Number},
-    volts: {type: Number},
+    watts: {type: String},
+    volts: {type: String},
     img: {type: String},
     price: {type: Number, min: 0, required: true},
 }, { timestamps: true })
@@ -57,7 +57,7 @@ const partsExtruderSchema = mongoose.Schema({
     name: {type: String, required: true, unique: true},
     directDrive: {type: Boolean},
     bowden: {type: Boolean},
-    diameter: {type: Number},
+    diameter: {type: String},
     img: {type: String},
     price: {type: Number, min: 0, required: true},
 }, { timestamps: true })
@@ -70,7 +70,7 @@ const partsHotEndSchema = mongoose.Schema({
 
 const partsNozzleSchema = mongoose.Schema({
     name: {type: String, required: true, unique: true},
-    diameter: {type: Number},
+    diameter: {type: String},
     material: {type: String},
     img: {type: String},
     price: {type: Number, min: 0, required: true},
