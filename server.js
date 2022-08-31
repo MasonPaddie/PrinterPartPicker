@@ -191,7 +191,8 @@ app.get(`/printers/:index`, ( req, res )=>{
     {printers: printers,
         index: index,
         obj: (printers[index]),
-        indexArr: indexArr
+        indexArr: indexArr,
+        parts: parts,
     });
 });
 

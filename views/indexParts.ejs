@@ -8,14 +8,45 @@
 <div class="indexDiv">
     <table class="parts">
         <tr>
-            <td class="tableTite" id="partName"> Name </td>
-            <td class="tableTite" id="partType"> Type </td>
-            <td class="tableTite" id="partPrice"> Price</td>
+            <td class="tableTitle" id="partName"> Name </td>
+            <td class="tableTitle" id="partType"> Type </td>
+            <td class="tableTitle" id="partPrice"> Price</td>
         </tr>
         <% for (let i = 0; i < parts.length; i++) { %>
             <tr>
                 <td><a class="indexDivLink" href='<%= `/parts/${i}` %>'> <%= parts[i].name %></a></td>
-                <td><p class="indexDivType"> <%=parts[i].type %></p></td>
+                <% if (parts[i].type === 'motionSystem') { %>
+                    <td><p class="indexDivType">Motion System</p></td>
+                <% } %>
+
+                <% if (parts[i].type === 'bed') { %>
+                    <td><p class="indexDivType">Bed</p></td>
+                <% } %>
+
+                <% if (parts[i].type === 'psu') { %>
+                    <td><p class="indexDivType">PSU</p></td>
+                <% } %>
+
+                <% if (parts[i].type === 'motherboard') { %>
+                    <td><p class="indexDivType">Motherboard</p></td>
+                <% } %>
+
+                <% if (parts[i].type === 'extruder') { %>
+                    <td><p class="indexDivType">Extruder</p></td>
+                <% } %>
+                
+                <% if (parts[i].type === 'hotEnd') { %>
+                    <td><p class="indexDivType">Hot End</p></td>
+                <% } %>
+
+                <% if (parts[i].type === 'nozzle') { %>
+                    <td><p class="indexDivType">Nozzle</p></td>
+                <% } %>
+
+                <% if (parts[i].type === 'lcd') { %>
+                    <td><p class="indexDivType">LCD</p></td>
+                <% } %>
+
                 <td><p class="indexDivPrice"><%=parts[i].price %></p></td>
             </tr> 
 

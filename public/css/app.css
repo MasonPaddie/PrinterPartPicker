@@ -47,7 +47,12 @@ ul {
 }
 
  input {
-    font-size: 50px;
+  font-size: 70px;
+  background-color:rgb(139, 139, 192);
+  -webkit-text-stroke: 1.5px wheat;
+  border: 3px solid black;
+  border-radius: 5px;
+  margin: 10px;
  }
 
  input[type=checkbox] {
@@ -88,8 +93,12 @@ option {
 }
 
 button {
-   font-size: 60px;
-   -webkit-text-stroke: 2px wheat;
+   font-size: 70px;
+   background-color:rgb(139, 139, 192);
+   -webkit-text-stroke: 1.5px wheat;
+   border: 3px solid black;
+   border-radius: 5px;
+   margin: 10px;
 }
 
 .backLabel {
@@ -98,20 +107,25 @@ button {
 }
 
 .showPartLink {
-   font-size: 60px;
+   font-size: 80px;
    position: absolute;
-   right: 0%;
-   width: 800px;
+   right: 5%;
+   width: 400px;
+   -webkit-text-stroke: 2px rgb(139, 139, 192);
+   margin-bottom: 85px;
 }
 
 .printerAtts { 
    text-align: left;
    text-decoration: underline;
+   font-size: 100px;
+   width: 1100px
 }
 
-.printerAtts u:after {
-   content: "\00a0\00a0\00a0\00a0";
-}
+.printerAtts u::after {
+  content: "........";
+  color: transparent;
+  }
  
 .indexDivLink{
    font-size: 60px;
@@ -122,6 +136,7 @@ button {
 
 .tableTitle {
    font-size: 90px;
+   border-bottom: 5px solid black;
 }
 
 .indexDivImg {
@@ -219,6 +234,18 @@ button {
  }
 
  #showPartImg {
+   width: 300px;
+   border: 8px solid black;
+   border-radius: 15px;
+ }
+
+ #homePrinterImg {
+   width: 300px;
+   border: 8px solid black;
+   border-radius: 15px;
+ }
+
+ #homePartImg {
    width: 500px;
    border: 8px solid black;
    border-radius: 15px;

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 parts = [ 
-    {name: "Sovol SV01 Motion System",type: "motionSystem", linearRails: true, zMotors: 2, zdimension: 300, img: "https://www.gabrian.com/wp-content/uploads/2022/01/t-slot-extrusions-with-accessories-500.jpeg", price: 50},
+    {name: "Sovol SV01 Motion System",type: "motionSystem", motionType:"Cartesian", linearRails: true, zMotors: 2, zdimension: 300, img: "https://www.gabrian.com/wp-content/uploads/2022/01/t-slot-extrusions-with-accessories-500.jpeg", price: 50},
     {name: "Sovol Flexible Bed", type:"bed", xdimension: 280, ydimension: 240, heatedBed: true, material: "glass", img: "https://cdn.shopify.com/s/files/1/0051/5548/7832/products/4_1000x.jpg?v=1643525062", price: 30},
     {name: "Meanwell LRS-350-24", type: "psu", watts: 350, volts: 24, img: "https://cdn.shopify.com/s/files/1/0051/5548/7832/products/Meanwell_Power-1_1000x.jpg?v=1637666223", price: 30},
     {name: "BIGTREETECH skr mini e3", type: "motherboard", bits: 32, img: "https://notenoughtech.com/wp-content/uploads/2022/02/BigTreeTech-SKR-Mini-E3-V3.0-1-2.jpg?x98242", price: 50},
@@ -20,6 +20,7 @@ const partsSchema = mongoose.Schema({
 
 const partsMotionSystemSchema = mongoose.Schema({
     name: {type: String, required: true, unique: true},
+    motionType: {type: String},
     linearRails: {type: Boolean},
     zMotors: {type: Number},
     zdimension: {type: Number, required: true},

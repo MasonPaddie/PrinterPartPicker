@@ -10,28 +10,41 @@
 <body>
 
     <h1>Printer Part Picker</h1>
+    <table>
+        <tr>
+            <td><form action="/printers" class="homePageLink">
+                <button type="submit">View All Printers</button>
+            </form></td> 
 
-    <form action="/printers" class="homePageLink">
-        <button type="submit">View All Printers</button>
-    </form> <br/>
-
-    <form action="/parts" class="homePageLink">
-        <button type="submit">View All Parts</button>
-    </form> <br/>
-    
-    <form action="/printers/new" class="homePageLink">
-        <button type="submit">New Printer</button>
-    </form> <br/>
-    
-    <form action="/parts/new" class="homePageLink">
-        <button type="submit">New Part</button>
-    </form> <br/>
-
-    <a href="/printers/<%= recentPrinterIndex%>" id="recentPrinterLink"> See Most Recent Printer</a>
-    <img src="<%= recentPrinter.img %>" id="recentPrinterImg"></img> <br/>
-
-    <a href="/printers/0" id="myPrinterLink"> See My Printer</a>
-    <img src="<%= myPrinter.img %>" id="myPrinterImg"></img> 
+            <td><form action="/parts" class="homePageLink">
+                <button type="submit">View All Parts</button>
+            </form></td> 
+        </tr>   
+        <tr>
+            <td><form action="/printers/new" class="homePageLink">
+                <button type="submit">New Printer</button>
+            </form></td> 
+            
+            <td><form action="/parts/new" class="homePageLink">
+                <button type="submit">New Part</button>
+            </form></td>
+        </tr>
+    </table>
+    <br/>
+    <table>
+        <tr>
+           <td><a href="/printers/<%= recentPrinterIndex%>" id="recentPrinterLink"> Most Recent Printer</a></td> 
+            <td><a href="/printers/0" id="myPrinterLink"> My Printer</a></td> 
+        </tr>
+        <tr>
+            <td><img src="<%= recentPrinter.img %>" id="recentPrinterImg"></img></td> 
+            <td><img src="<%= myPrinter.img %>" id="myPrinterImg"></img></td> 
+        </tr>
+        <tr>
+            <td style="font-size: 70px; width: 800px;"><%= recentPrinter.name %></td> 
+            <td style="font-size: 70px; width: 800px;"><%= myPrinter.name %></td> 
+        </tr>
+    </table>
 
 </body>
 </html>

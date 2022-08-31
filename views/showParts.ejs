@@ -1,19 +1,53 @@
 <%- include('./partials/headerPart.ejs') %>
     <h1><%=obj.name%> Page</h1> <br/>
     <form>
-        <input type="button" value="Back To Parts" onclick="history.back()">
+        <input type="button" value="Back To Parts" onclick='window.open("/parts")'>
     </form> <br/>
     
-    <img id="showPartImg" src=<%=(obj.img) %> > <br/>
+    <img id="showPartImg" src="<%=(obj.img) %>"><br/>
 
     <% for (let i =  0; i < Object.keys(obj).length; i++) {%>
 
-        <!-- for each key in the type, show the value of that key -->
-        
-    <p> <%=Object.keys(obj)[i]%>: <%= Object.values(obj)[i] %></p> 
+        <% if (Object.keys(obj)[i] === 'type' && Object.values(obj)[i] ==='motionSystem') {%>
+        <p>type: Motion System</p>
+        <% } %>
+            
+        <% if (Object.keys(obj)[i] === 'type' && Object.values(obj)[i] ==='bed') {%>
+            <p>type: Bed</p>
+        <% } %>
 
+        <% if (Object.keys(obj)[i] === 'type' && Object.values(obj)[i] ==='psu') {%>
+            <p>type: PSU</p>
+        <% } %>
+
+        <% if (Object.keys(obj)[i] === 'type' && Object.values(obj)[i] ==='motherboard') {%>
+            <p>type: Motherboard</p>
+        <% } %>
+
+        <% if (Object.keys(obj)[i] === 'type' && Object.values(obj)[i] ==='extruder') {%>
+            <p>type: Extruder</p>
+        <% } %>
+
+        <% if (Object.keys(obj)[i] === 'type' && Object.values(obj)[i] ==='hotEnd') {%>
+            <p>type: Hot End</p>
+        <% } %>
+
+        <% if (Object.keys(obj)[i] === 'type' && Object.values(obj)[i] ==='nozzle') {%>
+            <p>type: Nozzle</p>
+        <% } %>
+
+        <% if (Object.keys(obj)[i] === 'type' && Object.values(obj)[i] ==='lcd') {%>
+            <p>type: LCD</p>
+        <% } %>
+
+        <!-- for each key in the type, show the value of that key -->
+        <% if (Object.keys(obj)[i] != 'type') {%>
+            <p> <%=Object.keys(obj)[i]%>: <%= Object.values(obj)[i] %></p> 
+        <% } %>    
     <% } %>
 
+    <!-- if it is not one of the first parts, display edit and delete button -->
+    <% if (index > 7) {%>
     <a id="editButton" href="/parts/<%= index %>/edit">Edit part</a>
 
     <br/>
@@ -22,5 +56,6 @@
     <form action="/parts/<%= index %>?_method=DELETE" method="POST">
         <input type="submit" value="DELETE"/>
     </form>
+    <% } %>
 
 <%- include('./partials/footer.ejs') %>
