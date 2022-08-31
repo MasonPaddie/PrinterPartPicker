@@ -9,40 +9,40 @@
     <% for (let i =  0; i < Object.keys(obj).length; i++) {%>
 
         <% if (Object.keys(obj)[i] === 'type' && Object.values(obj)[i] ==='motionSystem') {%>
-        <p>type: Motion System</p>
+        <p class="partAtts">type: Motion System</p>
         <% } %>
             
         <% if (Object.keys(obj)[i] === 'type' && Object.values(obj)[i] ==='bed') {%>
-            <p>type: Bed</p>
+            <p class="partAtts">type: Bed</p>
         <% } %>
 
         <% if (Object.keys(obj)[i] === 'type' && Object.values(obj)[i] ==='psu') {%>
-            <p>type: PSU</p>
+            <p class="partAtts">type: PSU</p>
         <% } %>
 
         <% if (Object.keys(obj)[i] === 'type' && Object.values(obj)[i] ==='motherboard') {%>
-            <p>type: Motherboard</p>
+            <p class="partAtts">type: Motherboard</p>
         <% } %>
 
         <% if (Object.keys(obj)[i] === 'type' && Object.values(obj)[i] ==='extruder') {%>
-            <p>type: Extruder</p>
+            <p class="partAtts">type: Extruder</p>
         <% } %>
 
         <% if (Object.keys(obj)[i] === 'type' && Object.values(obj)[i] ==='hotEnd') {%>
-            <p>type: Hot End</p>
+            <p class="partAtts">type: Hot End</p>
         <% } %>
 
         <% if (Object.keys(obj)[i] === 'type' && Object.values(obj)[i] ==='nozzle') {%>
-            <p>type: Nozzle</p>
+            <p class="partAtts">type: Nozzle</p>
         <% } %>
 
         <% if (Object.keys(obj)[i] === 'type' && Object.values(obj)[i] ==='lcd') {%>
-            <p>type: LCD</p>
+            <p class="partAtts">type: LCD</p>
         <% } %>
 
         <!-- for each key in the type, show the value of that key -->
         <% if (Object.keys(obj)[i] != 'type') {%>
-            <p> <%=Object.keys(obj)[i]%>: <%= Object.values(obj)[i] %></p> 
+            <p class="partAtts"> <%=Object.keys(obj)[i]%>: <%= Object.values(obj)[i] %></p> 
         <% } %>    
     <% } %>
 
