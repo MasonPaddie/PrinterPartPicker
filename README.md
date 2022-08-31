@@ -16,3 +16,5 @@ As a user I want to be able to always read the information on screen in a presen
 The initial goal of this applicaiton is a full CRUD capablility application that allows 3D printer enthusiasts to plan upgrades and builds. A mongo database was incorporated to hold the data of users entering new parts or printers. 
 
 The initial page of the application is called the home page and is always accessible in the header. At this page, the user can make new items, view items, or explore recent builds from other users. This page is meant to be the one-stop-shop for most of the functionality in the application. 
+
+Link to deployed app: https://printerpartpicker.herokuapp.com/
